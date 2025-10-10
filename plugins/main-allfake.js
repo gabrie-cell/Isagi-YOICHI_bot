@@ -11,7 +11,7 @@ handler.all = async function (m) {
  
   global.botChannel = {
     id: "120363420590235387@newsletter",
-    name: "Ｉｓａｇｉ - Ｂｏｔ"
+    name: " Isagi channel"
 };
 
   global.selectedChannel = global.botChannel;
