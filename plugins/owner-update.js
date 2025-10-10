@@ -35,7 +35,7 @@ let handler = async (m, { conn, args }) => {
             console.error(statusError); 
         }
 
-        await conn.reply(m.chat, `❌ Error al actualizar: ${error.message || 'Error desconocido.'}`, m, fake);
+        await conn.reply(m.chat, `❌ Error al actualizar: ${error.message || 'Error desconocido.'}`, m, rcanal);
     } 
 };
 
