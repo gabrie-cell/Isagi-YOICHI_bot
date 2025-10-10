@@ -1,4 +1,4 @@
-// Código ñuto
+// Código mio
 
 import { execSync } from 'child_process';
 
