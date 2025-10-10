@@ -78,7 +78,7 @@ Si encuentras algún error, por favor contacta al propietario.
 
 handler.help = ['menu']
 handler.tags = ['main']
-handler.command = ['menu']
+handler.command = ['menu','help','menú','allmenu','menucompleto']
 handler.exp = false
 
 export default handler
