@@ -20,6 +20,5 @@ const handler = async (m, { conn, command}) => {
 handler.command = ['update', 'fix', 'up'];
 handler.owner = true;
 handler.group = false;
-handler.private = true;
 
 export default handler;
