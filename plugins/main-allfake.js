@@ -15,6 +15,7 @@ handler.all = async function (m) {
   ];
 
   global.selectedChannel = await getRandomChannel();
+};
   
 global.d = new Date(new Date + 3600000)
 global.locale = 'es'
