@@ -9,8 +9,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
   let totalGroup = Object.values(conn.chats).filter(v => v.id.endsWith('.net') && v.isGroup).length
 
   let info = `
-Hola, ${name}
-Soy isagi, listo para ayudarte.
+> Hola, ${name} Soy isagi, listo para ayudarte.
 
 *乂 Información del Usuario*
 ┌  ◦ *Estado:* ${user.premiumTime > 0 ? '👑 Premium' : 'Usuario'}
