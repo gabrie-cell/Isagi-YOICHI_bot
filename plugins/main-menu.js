@@ -65,16 +65,9 @@ Si encuentras algún error, por favor contacta al propietario.
   }).filter(Boolean).join('\n\n')
 
   await conn.sendMessage(m.chat, {
-    image: { url: 'https://cdn.yupra.my.id/yp/e1453bc3.jpg' },
+    image: { url: 'https://cdn.yupra.my.id/yp/wrf40qtg.jpg' },
     caption: info + '\n\n' + menuText
   }, { quoted: m })
-
-  await conn.sendMessage(m.chat, {
-    audio: { url: 'https://cdn.yupra.my.id/yp/okibzvte.mp3' },
-    mimetype: 'audio/mp4',
-    ptt: true
-  }, { quoted: m })
-}
 
 handler.help = ['menu']
 handler.tags = ['main']
