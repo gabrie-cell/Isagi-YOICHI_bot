@@ -1,4 +1,4 @@
-// Código de hashirama
+// Código ñuto
 
 import { execSync } from 'child_process';
 
