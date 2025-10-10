@@ -1,6 +1,6 @@
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '1'
 import './settings.js'
-import './plugins/_allfake.js'
+import './plugins/main-allfake.js'
 import cfonts from 'cfonts'
 import { createRequire } from 'module'
 import { fileURLToPath, pathToFileURL } from 'url'
