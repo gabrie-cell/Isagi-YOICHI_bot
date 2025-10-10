@@ -10,7 +10,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
 
   let info = `
 Hola, ${name}
-Soy Itachi, listo para ayudarte.
+Soy isagi, listo para ayudarte.
 
 *乂 Información del Usuario*
 ┌  ◦ *Estado:* ${user.premiumTime > 0 ? '👑 Premium' : 'Usuario'}
