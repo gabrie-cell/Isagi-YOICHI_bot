@@ -65,8 +65,7 @@ Si encuentras algún error, por favor contacta al propietario.
   }).filter(Boolean).join('\n\n')
 
   await conn.sendMessage(m.chat, {
-    image: { url: '.
-'https://cdn.yupra.my.id/yp/unyy5qaq.jpg' },
+    image: { url: 'https://cdn.yupra.my.id/yp/unyy5qaq.jpg' },
     caption: info + '\n\n' + menuText
   }, { quoted: m })
 
