@@ -1,5 +1,4 @@
 import yts from 'yt-search';
-
 const handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) {
     throw `🙈 Ingresa un nombre o texto para buscar en YouTube.\n\n📌 *Ejemplo:* ${usedPrefix + command} Haikyuu AMV`;
