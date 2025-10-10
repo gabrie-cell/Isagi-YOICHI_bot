@@ -65,7 +65,7 @@ Si encuentras algún error, por favor contacta al propietario.
   }).filter(Boolean).join('\n\n')
 
   await conn.sendMessage(m.chat, {
-    image: { url: 'https://files.cloudkuimages.guru/images/6ObtBlGZ.jpg' },
+    image: { url: 'https://files.catbox.moe/34d2w8.jpg' },
     caption: info + '\n\n' + menuText
   }, { quoted: m })
 
