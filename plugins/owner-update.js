@@ -1,62 +1,48 @@
-// Código de Dev-fedexyz13
+// Código de hashirama
 
 
-import { execSync} from 'child_process';
+import { execSync } from 'child_process';
 
-const handler = async (m, { conn, text, isROwner}) => {
-  if (!isROwner) return;
+let handler = async (m, { conn, args }) => { 
+    try { 
+        await conn.reply(m.chat, '*[❗] Se está actualizado el bot espere...*', m, rcanal)
 
-  await m.react('🕒'); 
+        const output = execSync('git pull' + (args.length ? ' ' + args.join(' ') : '')).toString();
+        let response = output.includes('Already up to date') 
+            ? '✨️ El bot ya está actualizado.' 
+            : `✨️ Se han aplicado actualizaciones:\n\n${output}`;
 
-  try {
-    const stdout = execSync('git pull' + (m.fromMe && text? ' ' + text: ''));
-    let output = stdout.toString();
+        await conn.reply(m.chat, response, m, rcanal);
 
-    if (output.includes('⚙ Ya está cargada la actualización.')) {
-      output = '✅ Los datos ya están actualizados a la última versión.';
-} else if (output.includes('👻 Actualizando.')) {
-      output = '🔄 Procesando actualización...\n\n' + output;
-}
+    } catch (error) { 
+        try { 
+            const status = execSync('git status --porcelain').toString().trim(); 
+            if (status) { 
+                const conflictedFiles = status.split('\n').filter(line => 
+                    !line.includes('ItachiSession/') && 
+                    !line.includes('.cache/') && 
+                    !line.includes('tmp/')
+                ); 
 
-    await m.react('✔️'); 
-    conn.reply(m.chat, output, m);
+                if (conflictedFiles.length > 0) { 
+                    const conflictMsg = `⚠️ Conflictos detectados en los siguientes archivos:\n\n` +
+                        conflictedFiles.map(f => '• ' + f.slice(3)).join('\n') +
+                        `\n\n🔹 Para solucionar esto, reinstala el bot o actualiza manualmente.`;
 
-} catch {
-    try {
-      const status = execSync('git status --porcelain');
-      if (status.length> 0) {
-        const conflictedFiles = status
-.toString()
-.split('\n')
-.filter(line => line.trim()!== '')
-.map(line => {
-            const ignoredPaths = [
-              '.npm/', '.cache/', 'tmp/',
-              'database.json', 'sessions/Principal/',
-              'npm-debug.log'
-            ];
-            return ignoredPaths.some(path => line.includes(path))? null: `*→ ${line.slice(3)}*`;
-})
-.filter(Boolean);
+                    return await conn.reply(m.chat, conflictMsg, m, rcanal); 
+                } 
+            } 
+        } catch (statusError) { 
+            console.error(statusError); 
+        }
 
-        if (conflictedFiles.length> 0) {
-          const errorMsg = `⚠️ *Actualización fallida:*\n\n> Se detectaron cambios locales que entran en conflicto con el repositorio remoto.\n\n${conflictedFiles.join('\n')}`;
-          await conn.reply(m.chat, errorMsg, m);
-          await m.react('✖️');
-}
-}
-} catch (error) {
-      console.error(error);
-      let fallbackMsg = '⚠️ Se produjo un error inesperado.';
-      if (error.message) fallbackMsg += `\n🧩 Detalles: ${error.message}`;
-      await conn.reply(m.chat, fallbackMsg, m);
-}
-}
+        await conn.reply(m.chat, `❌ Error al actualizar: ${error.message || 'Error desconocido.'}`, m, fake);
+    } 
 };
 
 handler.help = ['update'];
+handler.command = ['update', 'actualizar']
 handler.tags = ['owner'];
-handler.command = ['update', 'fix', 'actualizar'];
-handler.owner = true;
+handler.rowner = true;
 
 export default handler;
