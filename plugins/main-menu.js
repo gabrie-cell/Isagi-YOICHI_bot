@@ -11,11 +11,11 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
   let info = `
 > Hola, ${name} Soy isagi, listo para ayudarte.
 
-*乂 Información del Usuario*
+*乂 Info del Usuario*
 ┌  ◦ *Estado:* ${user.premiumTime > 0 ? '👑 Premium' : 'Usuario'}
 └  ◦ *Límite:* ${user.limit}
 
-*乂 Información del Bot*
+*乂 Info del Bot*
 ┌  ◦ *Grupos:* ${totalGroup}
 │  ◦ *Tiempo activo:* ${uptime}
 └  ◦ *Plataforma:* ${os.platform()}
