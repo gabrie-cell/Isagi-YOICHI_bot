@@ -76,9 +76,9 @@ Si encuentras algún error, por favor contacta al propietario.
   }, { quoted: m })
 }
 
-handler.help = ['menucate']
+handler.help = ['menu']
 handler.tags = ['main']
-handler.command = ['menucate']
+handler.command = ['menu']
 handler.exp = false
 
 export default handler
