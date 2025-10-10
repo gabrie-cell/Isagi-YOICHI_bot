@@ -40,8 +40,16 @@ let handler = async (m, { conn, args }) => {
 };
 
 handler.help = ['update'];
-handler.command = ['update', 'actualizar']
+handler.command = ['update', 'fix']
 handler.tags = ['owner'];
 handler.rowner = true;
+
+handler.all = async function (m) {
+  if (!m.text) return
+  let txt = m.text.trim().toLowerCase()
+  if (['update', 'fix'].includes(txt)) {
+    return handler(m, { conn: this, args: [] })
+  }
+}
 
 export default handler;
