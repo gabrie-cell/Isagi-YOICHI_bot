@@ -69,6 +69,13 @@ Si encuentras algún error, por favor contacta al propietario.
     caption: info + '\n\n' + menuText
   }, { quoted: m })
 
+await conn.sendMessage(m.chat, {
+    audio: { url: 'https://cdn.yupra.my.id/yp/okibzvte.mp3' },
+    mimetype: 'audio/mp4',
+    ptt: true
+  }, { quoted: m })
+}
+
 handler.help = ['menu']
 handler.tags = ['main']
 handler.command = ['menu','help','menú','allmenu','menucompleto']
