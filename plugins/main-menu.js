@@ -70,7 +70,7 @@ Si encuentras algún error, por favor contacta al propietario.
   }, { quoted: m })
 
   await conn.sendMessage(m.chat, {
-    audio: { url: 'https://files.cloudkuimages.guru/audios/h9UxILbP.mp3' },
+    audio: { url: 'https://cdn.yupra.my.id/yp/okibzvte.mp3' },
     mimetype: 'audio/mp4',
     ptt: true
   }, { quoted: m })
