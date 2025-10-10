@@ -8,13 +8,13 @@ const { generateWAMessageFromContent, prepareWAMessageMedia, proto } = pkg
 const handler = m => m;
 
 handler.all = async function (m) {
+ 
+  global.botChannel = {
+    id: "120363420590235387@newsletter",
+    name: "Ｉｓａｇｉ - Ｂｏｔ"
+};
 
-  global.botChannels = [
-    { id: "120363420590235387@newsletter", name: "Isagi - Bot"},
-    { id: "120363420590235387@newsletter", name: "Isagi - Bot"}
-  ];
-
-  global.selectedChannel = await getRandomChannel();
+  global.selectedChannel = global.botChannel;
 };
   
 global.d = new Date(new Date + 3600000)
