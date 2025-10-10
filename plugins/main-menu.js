@@ -39,13 +39,11 @@ Si encuentras algún error, por favor contacta al propietario.
     }
   })
 
-  // Detectar todas las etiquetas únicas
   let tagSet = new Set()
   for (let plugin of help)
     for (let tag of plugin.tags)
       tagSet.add(tag)
 
-  // Función para estilizar texto a capital pequeña
   const stylize = s => s.toLowerCase().replace(/[a-z]/g, c => {
     return {
       a: 'ᴀ', b: 'ʙ', c: 'ᴄ', d: 'ᴅ', e: 'ᴇ', f: 'ꜰ', g: 'ɢ',
