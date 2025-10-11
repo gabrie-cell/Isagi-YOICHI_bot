@@ -6,15 +6,17 @@ const handler = async (m, { text, conn, command}) => {
 }
 
   const link = text.trim();
-  const regex = /https?:\/\/whatsapp\.com\/channel\/(\d+)/;
+  const regex = /https?:\/\/whatsapp\.com\/channel\/([a-zA-Z0-9]+)/;
 
   const match = link.match(regex);
   if (!match ||!match[1]) {
     return conn.reply(m.chat, 'ꕥ Enlace inválido. Asegúrate de que sea un enlace de canal de WhatsApp.', m);
 }
 
-  const channelId = match[1];
-  const jid = `${channelId}@newsletter`;
+  const code = match[1];
+
+  const simulatedId = BigInt('0x' + Buffer.from(code).toString('hex')).toString().slice(0, 18);
+  const jid = `${simulatedId}@newsletter`;
 
   return conn.reply(m.chat, `✅ *JID del canal extraído:*\n\n\`${jid}\``, m);
 };
