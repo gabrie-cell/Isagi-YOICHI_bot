@@ -4,7 +4,7 @@
 
 
 <p align="center">
-  <img src="" alt="Nagi-BotV1" style="width: 75%; height: auto; max-width: 100px;">
+  <img src="https://files.catbox.moe/geo8jh.jpg" alt="Nagi-BotV1" style="width: 75%; height: auto; max-width: 100px;">
 
 -
 
