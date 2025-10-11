@@ -6,9 +6,10 @@ const menuVideos = [
     'https://files.catbox.moe/vbtn8h.mp4'
 ];
 const menuImages = [
-    'https://files.catbox.moe/fba87o.jpg',
-    'https://files.catbox.moe/u3itih.jpg',
-    'https://files.catbox.moe/j3ijr0.jpg'
+    'https://files.catbox.moe/34d2w8.jpg',
+    '.
+'https://files.catbox.moe/5gdy0v.jpg',
+    'https://files.catbox.moe/geo8jh.jpg'
 ];
 // --- --- --- --- --- --- --- --- --- --- -
 
