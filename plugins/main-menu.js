@@ -176,7 +176,7 @@ let bot = global.db.data.settings[conn.user.jid]
 };
 
  
-conn.sendMessage(m.chat, { audio: { url: 'link del audio', mimetype: 'audio/mpeg' }, { quoted: m })
+conn.sendMessage(m.chat, { audio: { url: 'https://cdn.yupra.my.id/yp/okibzvte.mp3'', mimetype: 'audio/mpeg' }, { quoted: m })
 
 handler.help = ['menu']; 
 handler.tags = ['main'];
