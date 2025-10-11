@@ -1,12 +1,13 @@
 > [!IMPORTANT]
 > _Este bot se encuentra actualmente en desarrollo. Únete a nuestro canal para recibir novedades y actualizaciones. [¡Canal Oficial!](https://whatsapp.com/channel/0029Vb6EMjb6GcGKmVITlG2p)_
+> GAY EL QUE CAMBIE ESTO 
 
 
 
 <p align="center">
   <img src="https://files.catbox.moe/geo8jh.jpg" alt="Nagi-BotV1" style="width: 75%; height: auto; max-width: 100px;">
 
--
+
 
 > [!NOTE]
 > **👑 CREATOR**
