@@ -44,13 +44,13 @@ global.mitaJadibts = true
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.packname = '⪛✰ MitaBot ✰⪜'
-global.botname = 'MitaBot-MD'
+global.packname = '⪛✰ IsagiBot ✰⪜'
+global.botname = 'Isagi-MD'
 global.wm = ''
-global.author = 'Made With By JonathanG'
-global.dev = 'Made With By JonathanG'
-global.textbot =  'Mitabot • Made With By JonathanG'
-global.etiqueta = 'JonathanG'
+global.author = 'Made With By gabriel'
+global.dev = 'Made With By gabriel'
+global.textbot =  'Isagibot • Made With By gabriel'
+global.etiqueta = 'gabriel'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
