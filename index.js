@@ -36,7 +36,7 @@ font: 'simple',
 align: 'left',
 gradient: ['green', 'white']
 })
-say('Made Dev-fedexyz', {
+say('Made Dev-gabrie-cell', {
 font: 'console',
 align: 'center',
 colors: ['cyan', 'magenta', 'yellow']
