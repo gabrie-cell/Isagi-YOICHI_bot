@@ -41,11 +41,11 @@ let handler = async (m, { conn, args }) => {
 ┃✦ Canal: https://whatsapp.com/channel/0029VbAt0n3It5rv4WOUcH0
 ╰━━━━━━━━━━━━━
 
-Quieres ser un sub bot?
+👻Quieres ser un sub bot?✨
 Utiliza *#qr* ó *#code* Créditos a 
-Jonathangg
+Jonathangg✨
 
-✰ Lista de comandos:
+✰ Lista de comandos:👻
 
 ╭─⬣「 ✰DESCARGAS✰ 」⬣
 │⁖ฺ۟̇࣪·֗٬̤⃟⚡#
@@ -124,7 +124,7 @@ Jonathangg
 │⁖ฺ۟̇࣪·֗٬̤⃟⚡#
 ╰─⬣
 
-> © Powered by Staff Mita Bot
+> © Powered by Staff ISAGI Bot
 `.trim();
 let bot = global.db.data.settings[conn.user.jid]
     // --- Lógica para elegir aleatoriamente entre video/gif o imagen ---
