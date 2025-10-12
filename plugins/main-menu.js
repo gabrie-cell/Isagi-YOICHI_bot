@@ -170,7 +170,7 @@ let bot = global.db.data.settings[conn.user.jid]
         // Enviar un mensaje de error simple si falla el envío complejo
         await conn.reply(m.chat, `Error al mostrar el menú. \n\n${txt}`, m);
     }
-conn.sendMessage(m.chat, { audio: { url: 'link del audio', mimetype: 'audio/mpeg' }, { quoted: m })
+conn.sendMessage(m.chat, { audio: { url: 'https://cdn.yupra.my.id/yp/okibzvte.mp3'', mimetype: 'audio/mpeg' }, { quoted: m })
 };
 
 
