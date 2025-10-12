@@ -23,10 +23,10 @@ global.prems = []
 
 global.libreria = "Baileys Multi Device"
 global.vs = "^1.8.2|Latest"
-global.nameqr = "YukiBot-MD"
+global.nameqr = "Isagi-Bot"
 global.sessions = "Sessions/Principal"
 global.jadi = "Sessions/SubBot"
-global.yukiJadibts = true
+global.isagiJadibts = true
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
@@ -42,11 +42,11 @@ global.catalogo = fs.readFileSync('./lib/catalogo.jpg')
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.group = "https://chat.whatsapp.com/HaKf6ezcwdbGzmH782eBal"
-global.community = "https://chat.whatsapp.com/G0kXqsteJFU74yrLtg79o6"
-global.channel = "https://whatsapp.com/channel/0029Vb64nWqLo4hb8cuxe23n"
-global.github = "https://github.com/The-King-Destroy/YukiBot-MD"
-global.gmail = "thekingdestroy507@gmail.com"
+global.group = "https://chat.whatsapp.com/"
+global.community = "https://chat.whatsapp.com/"
+global.channel = "https://whatsapp.com/channel/"
+global.github = "https://github.com/"
+global.gmail = "fedelanyt20@gmail.com"
 global.ch = {
 ch1: "120363401404146384@newsletter"
 }
