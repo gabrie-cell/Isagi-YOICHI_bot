@@ -1,32 +1,34 @@
+// Código Dev-fedexyz13 
+
 import fetch from 'node-fetch';
 
-var handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0]) {
-        return conn.reply(m.chat, `${emoji} Por favor, ingresa un enlace de TikTok.`, m);
-    }
+const handler = async (m, { conn, args}) => {
+  const emoji = '📥';
 
-    try {
-        await conn.reply(m.chat, `${emoji} Espere un momento, estoy descargando su video...`, m);
+  const url = args[0];
+  if (!url ||!url.startsWith('http')) {
+    return conn.reply(m.chat, `${emoji} Por favor, proporciona un enlace válido de TikTok.`, m);
+}
 
-        const tiktokData = await tiktokdl(args[0]);
+  await conn.reply(m.chat, `${emoji} Procesando tu solicitud...`, m);
 
-        if (!tiktokData || !tiktokData.data || !tiktokData.data.play) {
-            return conn.reply(m.chat, "Error: No se pudo obtener el video.", m);
-        }
+  try {
+    const videoData = await fetchTikTokVideo(url);
 
-        const videoURL = tiktokData.data.play;
+    if (!videoData?.data?.play) {
+      return conn.reply(m.chat, `${emoji} No se pudo obtener el video. Verifica el enlace.`, m);
+}
 
-        if (videoURL) {
-            await conn.sendFile(m.chat, videoURL, "tiktok.mp4", `${emoji} Aquí tienes ฅ^•ﻌ•^ฅ`, m);
-        } else {
-            return conn.reply(m.chat, "No se pudo descargar.", m);
-        }
-    } catch (error1) {
-        return conn.reply(m.chat, `Error: ${error1.message}`, m);
-    }
+    const videoURL = videoData.data.play;
+
+    await conn.sendFile(m.chat, videoURL, 'tiktok.mp4', `${emoji} Aquí tienes tu video 🎬`, m);
+} catch (error) {
+    console.error('Error al descargar TikTok:', error);
+    return conn.reply(m.chat, `${emoji} Ocurrió un error: ${error.message}`, m);
+}
 };
 
-handler.help = ['tiktok'].map((v) => v + ' *<link>*');
+handler.help = ['tiktok <link>'];
 handler.tags = ['descargas'];
 handler.command = ['tiktok', 'tt'];
 handler.group = true;
@@ -34,8 +36,9 @@ handler.limit = true;
 
 export default handler;
 
-async function tiktokdl(url) {
-    let tikwm = `https://www.tikwm.com/api/?url=${url}?hd=1`;
-    let response = await (await fetch(tikwm)).json();
-    return response;
+async function fetchTikTokVideo(url) {
+  const api = `https://www.tikwm.com/api/?url=${encodeURIComponent(url)}&hd=1`;
+  const response = await fetch(api);
+  if (!response.ok) throw new Error('No se pudo conectar con el servidor TikWM.');
+  return await response.json();
 }
