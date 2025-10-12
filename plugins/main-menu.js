@@ -5,12 +5,7 @@ const menuVideos = [
     'https://files.catbox.moe/vbtn8h.mp4',
     'https://files.catbox.moe/vbtn8h.mp4'
 ];
-const menuImages = [
-    'https://files.catbox.moe/34d2w8.jpg',
-    '.
-'https://files.catbox.moe/5gdy0v.jpg',
-    'https://files.catbox.moe/geo8jh.jpg'
-];
+
 // --- --- --- --- --- --- --- --- --- --- -
 
 // Función auxiliar para el tiempo de actividad 
@@ -43,11 +38,12 @@ let handler = async (m, { conn, args }) => {
 ┃Tiempo activo: ${uptime}
 ┃Registros ${totalreg}
 ┃Comandos ${totalCommands}
-┃✦ Canal: https://whatsapp.com/channel/0029VbAt0n3It5rv4WOUcH00
+┃✦ Canal: https://whatsapp.com/channel/0029VbAt0n3It5rv4WOUcH0
 ╰━━━━━━━━━━━━━
 
 Quieres ser un sub bot?
-Utiliza *#qr* ó *#code*
+Utiliza *#qr* ó *#code* Créditos a 
+Jonathangg
 
 ✰ Lista de comandos:
 
