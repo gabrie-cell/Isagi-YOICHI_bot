@@ -171,6 +171,7 @@ let bot = global.db.data.settings[conn.user.jid]
         await conn.reply(m.chat, `Error al mostrar el menú. \n\n${txt}`, m);
     }
 conn.sendMessage(m.chat, { audio: { url: 'https://cdn.yupra.my.id/yp/okibzvte.mp3'', mimetype: 'audio/mpeg' }, { quoted: m })
+
 };
 
 
