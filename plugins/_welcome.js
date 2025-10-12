@@ -2,7 +2,7 @@ import { WAMessageStubType } from '@whiskeysockets/baileys'
 import fetch from 'node-fetch'
 
 const channelRD = {
-  id: "120363418542108786@newsletter", // Cambia por tu canal si quieres
+  id: "118157285302731489@newsletter", // Cambia por tu canal si quieres
   name: "ISAGI - BOT"
 };
 
