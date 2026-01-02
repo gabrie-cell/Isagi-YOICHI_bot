@@ -21,7 +21,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     'owner': 'ᴍᴇɴᴜ ᴏᴡɴᴇʀ',
     'sticker': 'ᴍᴇɴᴜ sᴛɪᴄᴋᴇʀ',
     'tools': 'ᴍᴇɴᴜ ᴛᴏᴏʟs',
-    'fun: 'menu fun',
+    'fun': 'menu fun',
   }
 
   // 📑 Estilos
