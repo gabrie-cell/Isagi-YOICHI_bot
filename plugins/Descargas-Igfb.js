@@ -79,7 +79,7 @@ await m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* 
 }}
 
 handler.command = ['instagram', 'ig', 'facebook', 'fb']
-handler.tags = ['download']
+handler.tags = ['downloader']
 handler.help = ['instagram', 'ig', 'facebook', 'fb']
 handler.group = true
 
