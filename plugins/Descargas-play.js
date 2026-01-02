@@ -51,8 +51,8 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
 > ⏳ *Duración:* ${durationTimestamp}
 *°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
 > 🌐 *Link:* ${url}
-𖹭.╭╭ִ╼࣪━ִﮩ٨ـﮩ♡̫shadow bot♡ִ̫ﮩ٨ـﮩ━ִ╾࣪╮╮.𖹭*
-> .𖹭 © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ʏᴏsᴜᴇ𖹭.`
+𖹭.╭╭ִ╼࣪━ִﮩ٨ـﮩ♡̫Isagi bot♡ִ̫ﮩ٨ـﮩ━ִ╾࣪╮╮.𖹭*
+> .𖹭 © `POWEREW BY DANI` 𖹭.`
 
     const thumb = (await conn.getFile(thumbnail)).data
     await conn.sendMessage(
@@ -60,7 +60,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
       {
         image: thumb,
         caption,
-        footer: "Shadow — Descargas",
+        footer: "Isagi — Descargas",
         buttons: [
           { buttonId: `shadowaudio ${url}`, buttonText: { displayText: "🎧 Descargar Audio" }, type: 1 },
           { buttonId: `shadowvideo ${url}`, buttonText: { displayText: "🎥 Descargar Video" }, type: 1 }
@@ -102,8 +102,8 @@ const fetchBuffer = async (url) => {
 const downloadMedia = async (conn, m, url, type) => {
   try {
     const msg = type === "mp3"
-      ? "🎄 Shadow — Descargando audio..."
-      : "🎄 Shadow — Descargando video..."
+      ? "🎄 Isagi — Descargando audio..."
+      : "🎄 Isagi — Descargando video..."
 
     const sent = await conn.sendMessage(m.chat, { text: msg }, { quoted: m })
 
@@ -146,7 +146,7 @@ const downloadMedia = async (conn, m, url, type) => {
     await conn.sendMessage(
       m.chat,
       {
-        text: `🎄 Shadow — Completado\n\n✨ Título: ${fileTitle}`,
+        text: `🎄 Isagi — Completado\n\n✨ Título: ${fileTitle}`,
         edit: sent.key
       }
     )
