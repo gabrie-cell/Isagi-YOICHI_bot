@@ -1,101 +1,138 @@
-const menuSections = {
-    '✦ *DESCARGAS* ✦': [
-        '#facebook + <url>',
-        '#play + <texto>',
-        '#tiktok + <url>',
-        '#ig + <url>',
-    ],
-};
+import fs from 'fs'
 
-const PREFIX_SYMBOL = '🌱';
+let handler = async (m, { conn, usedPrefix }) => {
+  const delay = ms => new Promise(res => setTimeout(res, ms))
+  let taguser = '@' + m.sender.split('@')[0]
 
-function clockString(ms) {
-    if (isNaN(ms)) return '--:--:--';
-    const totalSeconds = Math.floor(ms / 1000);
-    const h = Math.floor(totalSeconds / 3600) % 24;
-    const m = Math.floor(totalSeconds / 60) % 60;
-    const s = totalSeconds % 60;
+  // 🏷️ Categorías
+  let tags = {
+    'info': 'ᴍᴇɴᴜ ɪɴғᴏ',
+    'anime': 'ᴍᴇɴᴜ ᴀɴɪᴍᴇ',
+    'buscador': 'ᴍᴇɴᴜ ʙᴜsᴄᴀᴅᴏʀ',
+    'downloader': 'ᴍᴇɴᴜ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ',
+    'fun': 'ᴍᴇɴᴜ ғᴜɴ',
+    'grupo': 'ᴍᴇɴᴜ ɢʀᴜᴘᴏ',
+    'ai': 'ᴍᴇɴᴜ ᴀɪ',
+    'game': 'ᴍᴇɴᴜ ɢᴀᴍᴇ',
+    'jadibot': 'ᴍᴇɴᴜ ᴊᴀᴅɪʙᴏᴛ',
+    'main': 'ᴍᴇɴᴜ ᴍᴀɪɴ',
+    'nable': 'ᴍᴇɴᴜ ᴏɴ / ᴏғғ',
+    'nsfw': 'ᴍᴇɴᴜ ɴsғᴡ',
+    'owner': 'ᴍᴇɴᴜ ᴏᴡɴᴇʀ',
+    'sticker': 'ᴍᴇɴᴜ sᴛɪᴄᴋᴇʀ',
+    'tools': 'ᴍᴇɴᴜ ᴛᴏᴏʟs',
+  }
 
-    const pad = (num) => String(num).padStart(2, '0');
+  // 📑 Estilos
+  let header = '*– %category*'
+  let body = '│  ◦ %cmd'
+  let footer = '└––'
+  let after = `✨ itachi-bot-MD - Tu asistente anime favorito`
 
-    return `${pad(h)}h ${pad(m)}m ${pad(s)}s`;
+  // 📊 Datos del usuario/bot
+  let user = global.db.data.users[m.sender]
+  let nombre = await conn.getName(m.sender)
+  let premium = user.premium ? '✅ Sí' : '❌ No'
+  let limite = user.limit || 0
+  let totalreg = Object.keys(global.db.data.users).length
+  let groupsCount = Object.values(conn.chats).filter(v => v.id.endsWith('@g.us')).length
+  let muptime = clockString(process.uptime())
+
+  function clockString(seconds) {
+    let h = Math.floor(seconds / 3600)
+    let m = Math.floor(seconds % 3600 / 60)
+    let s = Math.floor(seconds % 60)
+    return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':')
+  }
+
+  let infoUser = `
+ʜᴏʟᴀ, ${nombre}
+ꜱᴏʏ ɪᴛᴀᴄʜɪ, ʟɪꜱᴛᴏ ᴘᴀʀᴀ ᴀʏᴜᴅᴀʀᴛᴇ
+
+*乂 ɪɴꜰᴏ ᴅᴇʟ ᴜꜱᴜᴀʀɪᴏ*
+┌  ◦ ᴇꜱᴛᴀᴅᴏ: ᴜꜱᴜᴀʀɪᴏ
+│  ◦ ᴘʀᴇᴍɪᴜᴍ: ${premium}
+└  ◦ ʟíᴍɪᴛᴇ: ${limite}
+
+*乂 ɪɴꜰᴏ ᴅᴇʟ ʙᴏᴛ*
+┌  ◦ ɢʀᴜᴘᴏꜱ: ${groupsCount}
+│  ◦ ᴛɪᴇᴍᴘᴏ ᴀᴄᴛɪᴠᴏ: ${muptime}
+│  ◦ ᴜsᴜᴀʀɪᴏs: ${totalreg}
+└  ◦ ᴘʟᴀᴛᴀꜰᴏʀᴍᴀ: ʟɪɴᴜx
+
+*ꜱɪ ᴇɴᴄᴜᴇɴᴛʀᴀꜱ ᴀʟɢᴜ́ɴ ᴇʀʀᴏʀ, ᴘᴏʀ ꜰᴀᴠᴏʀ ᴄᴏɴᴛᴀᴄᴛᴀ ᴀʟ ᴏᴡɴᴇʀ.*
+`.trim()
+
+  // 📜 Lista de comandos organizados
+  let commands = Object.values(global.plugins).filter(v => v.help && v.tags).map(v => {
+    return {
+      help: Array.isArray(v.help) ? v.help : [v.help],
+      tags: Array.isArray(v.tags) ? v.tags : [v.tags]
+    }
+  })
+
+  let menu = []
+  for (let tag in tags) {
+    let comandos = commands
+      .filter(command => command.tags.includes(tag))
+      .map(command => command.help.map(cmd => body.replace(/%cmd/g, usedPrefix + cmd)).join('\n'))
+      .join('\n')
+    if (comandos) {
+      menu.push(header.replace(/%category/g, tags[tag]) + '\n' + comandos + '\n' + footer)
+    }
+  }
+
+  let finalMenu = infoUser + '\n\n' + menu.join('\n\n') + '\n' + after
+
+  // 🎴 Imagen portada
+  let imagen = 'https://cdn.yupra.my.id/yp/8b6org82.jpg'
+
+  // 📌 Contacto falso estilo "ping"
+  let vcard = `BEGIN:VCARD
+VERSION:3.0
+N:;Itachi;;;
+FN:Itachi
+item1.TEL;waid=13135550002:+1 (313) 555-0002
+item1.X-ABLabel:Celular
+END:VCARD`
+
+  let qkontak = {
+    key: {
+      fromMe: false,
+      participant: "0@s.whatsapp.net",
+      remoteJid: "status@broadcast",
+    },
+    message: {
+      contactMessage: {
+        displayName: "𝗜 𝗧 𝗔 𝗖 𝗛 𝗜 - 𝗕 𝗢 𝗧",
+        vcard: vcard,
+      },
+    },
+  }
+
+  // 📄 Envío estilo PDF con contacto falso
+  await conn.sendMessage(m.chat, {
+    document: fs.readFileSync('./package.json'),
+    fileName: '🌸 і𝗍ᥲᥴһі - ᑲ᥆𝗍 🌸',
+    mimetype: 'application/pdf',
+    caption: finalMenu,
+    contextInfo: {
+      externalAdReply: {
+        title: botname,
+        body: dev,
+        thumbnailUrl: imagen,
+        mediaType: 1,
+        renderLargerThumbnail: true
+      }
+    }
+  }, { quoted: qkontak }) // 👈 aquí la adaptación
+
+  await delay(400)
 }
 
-function buildMenuText({ name, botname, uptime, totalreg, totalCommands }) {
-    const sectionsText = Object.entries(menuSections)
-        .map(([title, commands]) => {
-            const commandsList = commands
-                .map(cmd => `│${PREFIX_SYMBOL}${cmd}`)
-                .join('\n');
-            return `\n╭─⬣「 ${title} 」⬣\n${commandsList}\n╰─⬣`;
-        })
-        .join('\n');
+handler.help = ['menu']
+handler.tags = ['main']
+handler.command = ['menu','help','menú','allmenu','menucompleto']
+handler.register = true
 
-    return `
-*Hola ${name}! Me llamo ${botname}*
-
-╭━━「 𝐈𝐍𝐅𝐎 𝐃𝐄𝐋 𝐁𝐎𝐓 」━━
-┃ 👑 *Activo:* ${uptime}
-┃ 👥 *Usuarios:* ${totalreg}
-┃ 📚 *Comandos:* ${totalCommands}
-┃ 📣 *Canal:
-  *🎅🏻FELIS NAVIDAD Y PRÓSPERO AÑO NUEVO LES DESEA ISAGI YOICHI*
-https://whatsapp.com/channel/0029Vb6nOKBD8SDp0aFtCD3R
-╰━━━━━━━━━━━━━━━
-
-¿*Quieres ser un sub bot?
-Utiliza* *#code*
-
-✦ Lista de comandos:
-${sectionsText}
-
-> © POWERED BY DX G😼
-`.trim();
-}
-
-let handler = async (m, { conn }) => {
-    const userId = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.sender;
-    const name = conn.getName(userId);
-    const _uptime = process.uptime() * 1000;
-
-    const metrics = {
-        name: name,
-        botname: global.botname || 'Isagi Bot',
-        uptime: clockString(_uptime),
-        totalreg: Object.keys(global.db?.data?.users || {}).length,
-        totalCommands: Object.values(global.plugins || {}).filter((v) => v.help && v.tags).length,
-    };
-
-    const menuText = buildMenuText(metrics);
-
-    const videoUrl = 'https://files.catbox.moe/oakq7t.mp4';
-
-    await conn.sendMessage(m.chat, {
-        video: { url: videoUrl },
-        gifPlayback: true,
-        caption: menuText,
-        contextInfo: {
-            externalAdReply: {
-                title: 'Isagi - Bot',
-                body: metrics.botname,
-                thumbnailUrl: 'https://files.catbox.moe/6orur7.jpg',
-                mediaType: 1,
-            },
-            mentionedJid: [m.sender, userId],
-            isForwarded: true,
-            forwardedNewsletterMessageInfo: {
-                newsletterJid: global.canalIdM?.[0] || '',
-                newsletterName: 'Isagi - MD',
-                serverMessageId: -1
-            }
-        }
-    }, { quoted: m });
-};
-
-
-handler.help = ['menu'];
-handler.tags = ['main'];
-handler.command = ['menu', 'menú', 'help'];
-handler.register = true;
-
-export default handler;
+export default handler
