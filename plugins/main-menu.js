@@ -32,7 +32,7 @@ function buildMenuText({ name, botname, uptime, totalreg, totalCommands }) {
         .join('\n');
 
     return `
-¡Hola ${name}! Me llamo ${botname}
+*Hola ${name}! Me llamo ${botname}*
 
 ╭━━「 𝐈𝐍𝐅𝐎 𝐃𝐄𝐋 𝐁𝐎𝐓 」━━
 ┃ 👑 *Activo:* ${uptime}
