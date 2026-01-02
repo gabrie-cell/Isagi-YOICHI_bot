@@ -26,7 +26,7 @@ conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}rep
 
 handler.help = ['pinterest']
 handler.command = ['pinterest', 'pin']
-handler.tags = ["download"]
+handler.tags = ["downloader"]
 handler.group = true
 
 export default handler
