@@ -52,7 +52,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
 *°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
 > 🌐 *Link:* ${url}
 𖹭.╭╭ִ╼࣪━ִﮩ٨ـﮩ♡̫Isagi bot♡ִ̫ﮩ٨ـﮩ━ִ╾࣪╮╮.𖹭*
-> .𖹭 © `POWEREW BY DANI` 𖹭.`
+> .𖹭 © POWEREW BY DANi 𖹭.`
 
     const thumb = (await conn.getFile(thumbnail)).data
     await conn.sendMessage(
