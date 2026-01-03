@@ -29,7 +29,7 @@ let handler = async (m, { conn, isPrems }) => {
 }
 
 handler.help = ['work']
-handler.tags = ['eco']
+handler.tags = ['economia']
 handler.command = ['w', 'work', 'chambear', 'chamba', 'trabajar']
 handler.group = false
 handler.register = false
