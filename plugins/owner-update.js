@@ -52,7 +52,7 @@ const handler = async (m, { conn, args}) => {
 const keywords = ['update', 'up', 'fix'];
 
 handler.help = ['update'];
-handler.tags = ['downloader'];
+handler.tags = ['owner'];
 handler.command = ['update', 'up', 'fix'];
 handler.rowner = true;
 
