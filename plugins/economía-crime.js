@@ -94,7 +94,7 @@ let handler = async (m, { conn }) => {
   global.db.write()
 }
 
-handler.tags = ['eco']
+handler.tags = ['economia']
 handler.help = ['crime']
 handler.command = ['crimen', 'crime']
 handler.register = false
