@@ -2,7 +2,7 @@
 
 const handler = async (m, { text, conn, command}) => {
   if (!text || typeof text!== 'string' ||!text.trim()) {
-    return conn.reply(m.chat, '❀ Por favor ingresa el enlace del canal.', m);
+    return conn.reply(m.chat, '*🌴 Por favor ingresa el enlace del canal*.', m);
 }
 
   const link = text.trim();
@@ -10,7 +10,7 @@ const handler = async (m, { text, conn, command}) => {
 
   const match = link.match(regex);
   if (!match ||!match[1]) {
-    return conn.reply(m.chat, 'ꕥ Enlace inválido. Asegúrate de que sea un enlace de canal de WhatsApp.', m);
+    return conn.reply(m.chat, '*🌱 Enlace inválido*. *Asegúrate de que sea un enlace de canal de WhatsApp*.', m);
 }
 
   const code = match[1];
