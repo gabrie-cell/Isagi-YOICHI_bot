@@ -21,14 +21,14 @@ let handler = async (m, { conn, usedPrefix }) => {
     'owner': 'ᴍᴇɴᴜ ᴏᴡɴᴇʀ',
     'sticker': 'ᴍᴇɴᴜ sᴛɪᴄᴋᴇʀ',
     'tools': 'ᴍᴇɴᴜ ᴛᴏᴏʟs',
-    'economia': MENU ECONOMIA',
+    'economia': 'MENU ECONOMIA',
   }
 
   // 📑 Estilos
   let header = '*– %category*'
   let body = '│  ◦ %cmd'
   let footer = '└––'
-  let after = `✨ itachi-bot-MD - Tu asistente anime favorito`
+  let after = `✨ Isagi-bot-MD - Tu asistente  de anime favorito`
 
   // 📊 Datos del usuario/bot
   let user = global.db.data.users[m.sender]
@@ -48,7 +48,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 
   let infoUser = `
 ʜᴏʟᴀ, ${nombre}
-ꜱᴏʏ ɪᴛᴀᴄʜɪ, ʟɪꜱᴛᴏ ᴘᴀʀᴀ ᴀʏᴜᴅᴀʀᴛᴇ
+ꜱᴏʏ Isagi, ʟɪꜱᴛᴏ ᴘᴀʀᴀ ᴀʏᴜᴅᴀʀᴛᴇ
 
 *乂 ɪɴꜰᴏ ᴅᴇʟ ᴜꜱᴜᴀʀɪᴏ*
 ┌  ◦ ᴇꜱᴛᴀᴅᴏ: ᴜꜱᴜᴀʀɪᴏ
