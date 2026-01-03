@@ -18,7 +18,7 @@ var handler = async (m, { conn, args }) => {
     const isUserAdmin = userParticipant?.admin === 'admin' || userParticipant?.admin === 'superadmin' || m.sender === groupMetadata.owner;
 
     if (!isUserAdmin) {
-        return m.reply('❌ Solo los admins pueden usar este comando.');
+        return m.reply('*❌ Solo los admins pueden usar este comando*.');
     }
 
     // Obtener usuario a expulsar
@@ -32,7 +32,7 @@ var handler = async (m, { conn, args }) => {
         if (!number) return m.reply('⚠️ Número inválido.');
         user = number + '@s.whatsapp.net';
     } else {
-        return m.reply('🚫 Mencioná, respondé o escribí un número para expulsar.');
+        return m.reply('*🚫 Mencioná, respondé o escribí un número para expulsar*.');
     }
 
     const ownerGroup = groupMetadata.owner || m.chat.split`-`[0] + '@s.whatsapp.net';
