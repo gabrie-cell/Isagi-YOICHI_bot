@@ -34,7 +34,7 @@ var handler = async (m, { conn }) => {
 }
 
 handler.help = ['daily', 'claim']
-handler.tags = ['rpg']
+handler.tags = ['economia']
 handler.command = ['daily', 'diario']
 handler.group = false
 handler.register = false
