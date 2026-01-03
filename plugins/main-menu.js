@@ -7,34 +7,34 @@ let handler = async (m, { conn, usedPrefix }) => {
   // 🏷️ (Categorías MANUALES )
   let categorias = {
     'ɪɴғᴏ': [
-      'infobot',
-      'owner',
-      'speedtest'
+      '.',
+      '.',
+      '.'
     ],
     'ᴀɴɪᴍᴇ': [
-      'loli',
-      'waifu',
-      'neko'
+      '.',
+      '.',
+      '.'
     ],
     'ʙᴜsᴄᴀᴅᴏʀ': [
-      'google',
-      'ytsearch',
-      'play'
+      '.',
+      '.',
+      '.'
     ],
     'ᴅᴏᴡɴʟᴏᴀᴅᴇʀ': [
-      'ytmp3',
-      'ytmp4',
-      'instagram'
+      '.',
+      '.',
+      '.'
     ],
     'ғᴜɴ': [
-      'simi',
-      'jokes',
-      'chiste'
+      '.',
+      '.',
+      '.'
     ],
     'ɢʀᴜᴘᴏ': [
-      'add',
-      'kick',
-      'grupo'
+      '.',
+      '.',
+      '.'
     ],
     'ᴀɪ': [
       'chatgpt',
@@ -42,24 +42,24 @@ let handler = async (m, { conn, usedPrefix }) => {
       'dall-e'
     ],
     'ɢᴀᴍᴇ': [
-      'apostar',
-      'minar',
-      'top'
+      '.',
+      '.',
+      '.'
     ],
     'ᴏᴡɴᴇʀ': [
-      'ban',
-      'addprem',
-      'broadcast'
+      '.',
+      '.',
+      'update'
     ],
     'sᴛɪᴄᴋᴇʀ': [
-      'sticker',
+      '.',
       's',
-      'attp'
+      '.'
     ],
     'ᴛᴏᴏʟs': [
-      'traducir',
-      'calc',
-      'qrcode'
+      '.',
+      '.',
+      '.'
     ]
   }
 
