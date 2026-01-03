@@ -4,7 +4,7 @@ import fetch from "node-fetch"
 const handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) return m.reply("Escribe el nombre del video o un enlace de YouTube.")
 
-  await m.react("❄️")
+  await m.react("🕑")
 
   try {
     let url = text
@@ -108,8 +108,8 @@ const downloadMedia = async (conn, m, url, type) => {
     const sent = await conn.sendMessage(m.chat, { text: msg }, { quoted: m })
 
     const apiUrl = type === "mp3"
-      ? `https://api-adonix.ultraplus.click/download/ytaudio?url=${encodeURIComponent(url)}&apikey=ShadowkeyBotMD`
-      : `https://api-adonix.ultraplus.click/download/ytvideo?url=${encodeURIComponent(url)}&apikey=ShadowkeyBotMD`
+      ? `https://api-adonix.ultraplus.click/download/ytaudio?url=${encodeURIComponent(url)}&apikey=WilkerKeydukz9l6871`
+      : `https://api-adonix.ultraplus.click/download/ytvideo?url=${encodeURIComponent(url)}&apikey=WilkerKeydukz9l6871`
 
     const r = await fetch(apiUrl)
     const data = await r.json()
