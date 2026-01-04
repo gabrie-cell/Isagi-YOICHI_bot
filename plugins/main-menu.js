@@ -86,7 +86,7 @@ let handler = async (m, { conn, usedPrefix }) => {
   let finalMenu = infoUser + '\n\n' + menu.join('\n\n') + '\n' + after
 
   // 🎴 Imagen portada
-  let imagen = 'https://cdn.yupra.my.id/yp/8b6org82.jpg'
+  let imagen = 'https://o.uguu.se/vEXqDRPT.jpg
 
   // 📌 Contacto falso estilo "ping"
   let vcard = `BEGIN:VCARD
@@ -105,7 +105,7 @@ END:VCARD`
     },
     message: {
       contactMessage: {
-        displayName: "𝗜 𝗧 𝗔 𝗖 𝗛 𝗜 - 𝗕 𝗢 𝗧",
+        displayName: "I S A G I -  B O T",
         vcard: vcard,
       },
     },
@@ -114,7 +114,7 @@ END:VCARD`
   // 📄 Envío estilo PDF con contacto falso
   await conn.sendMessage(m.chat, {
     document: fs.readFileSync('./package.json'),
-    fileName: '🌸 і𝗍ᥲᥴһі - ᑲ᥆𝗍 🌸',
+    fileName: '🌸 isagi - ᑲ᥆𝗍 🌸',
     mimetype: 'application/pdf',
     caption: finalMenu,
     contextInfo: {
