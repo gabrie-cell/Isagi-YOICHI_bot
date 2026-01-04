@@ -36,7 +36,7 @@ global.dev = "© ⍴᥆ᥕᥱrᥱძ ᑲᥡ ⁱᵃᵐ|gabriel"
 global.author = "© mᥲძᥱ ᥕі𝗍һ ᑲᥡ ⁱᵃᵐ|gabriel"
 global.etiqueta = "ⁱᵃᵐ|gabriel"
 global.currency = "¥enes"
-global.banner = "https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1742678744381.jpeg"
+global.banner = "https://o.uguu.se/vEXqDRPT.jpg"
 global.icono = "https://o.uguu.se/vEXqDRPT.jpg"
 global.catalogo = fs.readFileSync('./lib/catalogo.jpg')
 
